@@ -83,10 +83,14 @@ class LogisticRegression:
         for epoch in range(epochs):
             cumulative_loss = 0 # set initial loss to 0
             
-            # z from calculation perspectives is the result from sigmoid function
+            # perform forward propagation
+            # logits = sigmoid((X * W) + B)
+
+            # (X * W) + B
             z = self.predict(X) 
             
             # logits are y_hats
+            # Acitivate nonlinearity and get probabilities
             logits = self.sigmoid(z) 
             
             loss = self.calculate_loss(logits, Y)
