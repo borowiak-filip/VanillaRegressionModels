@@ -121,7 +121,7 @@ M = 100
 N = 8
 Lr = 0.01
 
-dataGen = GenData(size=M, n_features=8, noise_mu=0, noise_std=0.3) 
+dataGen = GenData(size=M, n_features=N, noise_mu=0, noise_std=0.3) 
 
 data, noise_data, labels = dataGen.create()  
 
