@@ -1,2 +1,2 @@
-# VanillaLinearRegression
-Linear Regression from scratch using NumPy
+# Vanilla Regression Models
+Linear and Logisitc Regression models from scratch using NumPy
