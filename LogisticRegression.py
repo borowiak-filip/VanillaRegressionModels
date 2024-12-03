@@ -66,7 +66,7 @@ class LogisticRegression:
             # L = negative log-likelihood
             # L + L2_reg = MAP
         binary_cross_entropy_loss =  - np.mean(y * np.log(y_hat) + (1 - y) * np.log(1 - y_hat))
-        L2_reg = self.l2 * np.sum(self.weights ** 2)
+        L2_reg = 0.5 * self.l2 * np.sum(self.weights ** 2) # Alpha /2 * W.T * W
         
         return binary_cross_entropy_loss + L2_reg
                         
