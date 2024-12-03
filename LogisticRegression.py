@@ -74,10 +74,10 @@ class LogisticRegression:
         print(self.weights.shape)
         
     def sigmoid(self, x_in):
-        return 1/(1 + np.exp(-x_in)) 
+        return 1/(1 + np.exp(-x_in)) # Create Probabilities
 
     def predict(self, X):
-        return np.dot(X, self.weights) + self.bias # probability of 
+        return np.dot(X, self.weights) + self.bias # X * W + B
     
     def train(self, X, Y, epochs):
         for epoch in range(epochs):
@@ -103,7 +103,8 @@ class LogisticRegression:
                 
             dw = np.dot(X.T, (logits - Y)) / self.m
             db = np.mean(logits - Y)
-            
+
+            # Update
             self.weights -= self.learning_rate * dw
             self.bias    -= self.learning_rate * db
             
