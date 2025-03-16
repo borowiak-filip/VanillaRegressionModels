@@ -105,7 +105,7 @@ class LogisticRegression:
                 # Multiply => DL/Dw = (y_hat - y)*X
                 # Add 1/m and sum and we are good to go!
                 
-            dw = np.dot(X.T, (logits - Y)) / self.m
+            dw = np.dot(X.T, (logits - Y)) / self.m + self.l2 * self.weights
             db = np.mean(logits - Y)
 
             # Update
